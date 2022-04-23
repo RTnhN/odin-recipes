@@ -1,0 +1,15 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(206, 206, 206);
+}
+
+p{
+  width: 50vw;
+}
+
+img{
+  width: 50vw;
+}
