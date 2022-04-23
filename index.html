@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Cookies, Cookies, and More Cookies</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cookies, Cookies, and More Cookies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="stylesheet" href="./Style.css">
+</head>
+
+<body class="index_page">
+  <div id="chipDiv"></div>
+  <div class="index_link">
     <h1>Cookies, Cookies, and More Cookies</h1>
-    <img src="./images/cookie_monster.gif" alt="gif of cookie monster">
-    <ul>
-    <li><a href="./recipes/chocolate_chip.html">Chocolate Chip Cookies</a></li>
-    <li><a href="./recipes/snickerdoodle.html">Snickerdoodle Cookies</a></li>
-    <li><a href="./recipes/sugar.html">Sugar Cookies</a></li>
+    <ul class="link_list">
+      <li class="link_container"><a href="./recipes/snickerdoodle.html" class="list_item" draggable="false">Snickerdoodle Cookies</a></li>
+      <li class="link_container"><a href="./recipes/chocolate_chip.html" class="list_item" draggable="false">Chocolate Chip Cookies</a>
+      </li>
+      <li class="link_container"><a href="./recipes/sugar.html" class="list_item" draggable="false">Sugar Cookies</a></li>
     </ul>
-  </body>
+    <div class="x" draggable="false">
+      <img class="y"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/03/Oxygen480-apps-preferences-web-browser-cookies.svg"
+        alt="gif of cookie monster" draggable="false">
+      <div class="x d1" draggable="false">
+        <img class="y d1"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/03/Oxygen480-apps-preferences-web-browser-cookies.svg"
+          alt="gif of cookie monster" draggable="false">
+      </div>
+      <div class="x d2" draggable="false">
+        <img class="y d2"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/03/Oxygen480-apps-preferences-web-browser-cookies.svg"
+          alt="gif of cookie monster" draggable="false" >
+      </div>
+      <div class="x d3" draggable="false">
+        <img class="y d3"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/03/Oxygen480-apps-preferences-web-browser-cookies.svg"
+          alt="gif of cookie monster" draggable="false">
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll(".y").forEach(elem=>elem.addEventListener("click", cookieAction));
+    const chipDiv = document.getElementById("chipDiv");
+    function cookieAction(e) {
+      const x = e.clientX;
+      const y = e.clientY;
+      console.log(x);
+      console.log(y);
+      chipDiv.appendChild(document.createElement("img"));
+      chipDiv.lastChild.setAttribute("src", "./images/cc.png")
+      chipDiv.lastChild.style.position = "absolute";
+      chipDiv.lastChild.style.top = `${y}px`;
+      chipDiv.lastChild.style.left = `${x}px`;
+      chipDiv.lastChild.style.width = "30px";
+      chipDiv.lastChild.style.height = "30px";
+      chipDiv.lastChild.setAttribute("draggable", "false");
+
+    }
+  </script>
+</body>
 
 </html>
